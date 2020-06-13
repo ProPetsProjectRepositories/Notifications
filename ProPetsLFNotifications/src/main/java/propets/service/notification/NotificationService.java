@@ -21,6 +21,9 @@ public class NotificationService {
 
 	@StreamListener(Sink.INPUT)
 	public void notification(NotificationDTO notification) {
+		if (notification == null) {
+			return;
+		}
 		String urlNotification = configuration.getUrlNotification() + notification.getId();
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setSubject(configuration.getSubject());
