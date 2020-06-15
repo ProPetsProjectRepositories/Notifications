@@ -32,5 +32,7 @@ public class NotificationService {
 			message.setTo(user);
 			emailSender.send(message);
 		});
+//		message.setTo("v_litva@mail.ru");
+//		emailSender.send(message);
 	}
 }
