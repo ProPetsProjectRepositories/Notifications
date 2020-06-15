@@ -28,11 +28,11 @@ public class NotificationService {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setSubject(configuration.getSubject());
 		message.setText(configuration.getText() + urlNotification);
-//		notification.getUsers().forEach((user) -> {
-//			message.setTo(user);
-//			emailSender.send(message);
-//		});
-		message.setTo("v_litva@mail.ru");
-		emailSender.send(message);
+		notification.getUsers().forEach((user) -> {
+			message.setTo(user);
+			emailSender.send(message);
+		});
+//		message.setTo("v_litva@mail.ru");
+//		emailSender.send(message);
 	}
 }
